@@ -21,7 +21,7 @@ export const register = async(req, res)=>{
         await user.save()
         //Responder al usuario
         return res.send({message: `Registered successfully, can be logged with username ${user.username}`})
-    } catch (error) {
+    } catch (err) {
         console.log(err)
         return res.status(500).send({message: 'Error registering user'})
 
